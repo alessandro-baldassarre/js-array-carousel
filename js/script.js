@@ -23,3 +23,117 @@ const text = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
+
+
+let mainCarouselImage = "";
+
+let mainCarouselText = "";
+
+
+for ( let i = 0; i < items.length; i++){
+
+    
+        mainCarouselImage += `<div class="my-carousel-img d-none"> <img src="${items[i]}" alt="random image"> </div>`;
+
+        mainCarouselText += `<div class="my-carousel-text d-none position-absolute">
+        <h1>${title[i]}</h1>
+        <p>${text[i]}</p> </div>`;
+    
+
+}
+
+const mainCarousel = document.querySelector(".my-carousel-main");
+
+mainCarousel.innerHTML += mainCarouselImage;
+
+mainCarousel.innerHTML += mainCarouselText;
+
+const mainCarouselImageCurrent = document.getElementsByClassName("my-carousel-img");
+
+const mainCarouselTextCurrent = document.getElementsByClassName("my-carousel-text");
+
+mainCarouselImageCurrent[0].classList.remove("d-none");
+mainCarouselImageCurrent[0].classList.add("d-block");
+
+mainCarouselTextCurrent[0].classList.remove("d-none");
+mainCarouselTextCurrent[0].classList.add("d-block");
+
+let counter = 0;
+
+const arrowDown = document.querySelector(".arrow-down");
+
+arrowDown.addEventListener("click", function(){
+
+
+    if(counter < (mainCarouselImageCurrent.length - 1)){
+
+        mainCarouselImageCurrent[counter].classList.remove("d-block");
+        mainCarouselImageCurrent[counter].classList.add("d-none");
+        mainCarouselTextCurrent[counter].classList.remove("d-block");
+        mainCarouselTextCurrent[counter].classList.add("d-none");
+
+        counter++;
+
+        mainCarouselImageCurrent[counter].classList.add("d-block");
+        mainCarouselImageCurrent[counter].classList.remove("d-none");
+        mainCarouselTextCurrent[counter].classList.add("d-block");
+        mainCarouselTextCurrent[counter].classList.remove("d-none");
+    }
+
+    else{
+        mainCarouselImageCurrent[counter].classList.remove("d-block");
+        mainCarouselImageCurrent[counter].classList.add("d-none");
+        mainCarouselTextCurrent[counter].classList.remove("d-block");
+        mainCarouselTextCurrent[counter].classList.add("d-none");
+
+        mainCarouselImageCurrent[0].classList.remove("d-none");
+        mainCarouselImageCurrent[0].classList.add("d-block");
+
+        mainCarouselTextCurrent[0].classList.remove("d-none");
+        mainCarouselTextCurrent[0].classList.add("d-block");
+
+        counter = 0;
+
+    }
+
+
+});
+
+const arrowUp = document.querySelector(".arrow-up");
+
+arrowUp.addEventListener("click", function(){
+
+
+    if(counter > 0){
+
+        mainCarouselImageCurrent[counter].classList.remove("d-block");
+        mainCarouselImageCurrent[counter].classList.add("d-none");
+        mainCarouselTextCurrent[counter].classList.remove("d-block");
+        mainCarouselTextCurrent[counter].classList.add("d-none");
+
+        counter--;
+
+        mainCarouselImageCurrent[counter].classList.add("d-block");
+        mainCarouselImageCurrent[counter].classList.remove("d-none");
+        mainCarouselTextCurrent[counter].classList.add("d-block");
+        mainCarouselTextCurrent[counter].classList.remove("d-none");
+    }
+
+    else{
+        mainCarouselImageCurrent[counter].classList.remove("d-block");
+        mainCarouselImageCurrent[counter].classList.add("d-none");
+        mainCarouselTextCurrent[counter].classList.remove("d-block");
+        mainCarouselTextCurrent[counter].classList.add("d-none");
+
+        mainCarouselImageCurrent[mainCarouselImageCurrent.length - 1].classList.remove("d-none");
+        mainCarouselImageCurrent[mainCarouselImageCurrent.length - 1].classList.add("d-block");
+
+        mainCarouselTextCurrent[mainCarouselImageCurrent.length - 1].classList.remove("d-none");
+        mainCarouselTextCurrent[mainCarouselImageCurrent.length - 1].classList.add("d-block");
+
+        counter = mainCarouselImageCurrent.length - 1;
+
+    }
+
+
+});

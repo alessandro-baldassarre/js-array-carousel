@@ -60,6 +60,7 @@
     line-height: 2rem;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 .arrow-up{
     top: .5rem;
