@@ -23,7 +23,7 @@
 .my-carousel-text{
     width: 30%;
     bottom: 1rem;
-    right: 1rem;
+    left: 1rem;
     color: white;
 }
 
@@ -33,20 +33,19 @@
 
 .my-carousel-aside-img{
     height: calc(100% / 5);
-    opacity: .7;
-   
+    filter: opacity(50%)
 }
 
 .my-active{
     border: 3px solid lightgray;
-    opacity: 1;
+    filter: opacity(100%);
 }
 
 
 .my-carousel-aside-img img{
-   height: 100%;
-   width: 100%;
-   object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .arrow{
