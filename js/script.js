@@ -52,11 +52,15 @@ const mainCarouselImageCurrent = document.getElementsByClassName("my-carousel-im
 
 const mainCarouselTextCurrent = document.getElementsByClassName("my-carousel-text");
 
+const asideCarouselImageCurrent = document.getElementsByClassName("my-carousel-aside-img");
+
 mainCarouselImageCurrent[0].classList.remove("d-none");
 mainCarouselImageCurrent[0].classList.add("d-block");
 
 mainCarouselTextCurrent[0].classList.remove("d-none");
 mainCarouselTextCurrent[0].classList.add("d-block");
+
+asideCarouselImageCurrent[0].classList.add("my-active");
 
 let counter = 0;
 
@@ -71,6 +75,7 @@ arrowDown.addEventListener("click", function(){
         mainCarouselImageCurrent[counter].classList.add("d-none");
         mainCarouselTextCurrent[counter].classList.remove("d-block");
         mainCarouselTextCurrent[counter].classList.add("d-none");
+        asideCarouselImageCurrent[counter].classList.remove("my-active");
 
         counter++;
 
@@ -78,6 +83,7 @@ arrowDown.addEventListener("click", function(){
         mainCarouselImageCurrent[counter].classList.remove("d-none");
         mainCarouselTextCurrent[counter].classList.add("d-block");
         mainCarouselTextCurrent[counter].classList.remove("d-none");
+        asideCarouselImageCurrent[counter].classList.add("my-active");
     }
 
     else{
@@ -85,12 +91,14 @@ arrowDown.addEventListener("click", function(){
         mainCarouselImageCurrent[counter].classList.add("d-none");
         mainCarouselTextCurrent[counter].classList.remove("d-block");
         mainCarouselTextCurrent[counter].classList.add("d-none");
+        asideCarouselImageCurrent[counter].classList.remove("my-active");
 
         mainCarouselImageCurrent[0].classList.remove("d-none");
         mainCarouselImageCurrent[0].classList.add("d-block");
 
         mainCarouselTextCurrent[0].classList.remove("d-none");
         mainCarouselTextCurrent[0].classList.add("d-block");
+        asideCarouselImageCurrent[0].classList.add("my-active");
 
         counter = 0;
 
@@ -110,6 +118,7 @@ arrowUp.addEventListener("click", function(){
         mainCarouselImageCurrent[counter].classList.add("d-none");
         mainCarouselTextCurrent[counter].classList.remove("d-block");
         mainCarouselTextCurrent[counter].classList.add("d-none");
+        asideCarouselImageCurrent[counter].classList.remove("my-active");
 
         counter--;
 
@@ -117,6 +126,7 @@ arrowUp.addEventListener("click", function(){
         mainCarouselImageCurrent[counter].classList.remove("d-none");
         mainCarouselTextCurrent[counter].classList.add("d-block");
         mainCarouselTextCurrent[counter].classList.remove("d-none");
+        asideCarouselImageCurrent[counter].classList.add("my-active");
     }
 
     else{
@@ -124,9 +134,11 @@ arrowUp.addEventListener("click", function(){
         mainCarouselImageCurrent[counter].classList.add("d-none");
         mainCarouselTextCurrent[counter].classList.remove("d-block");
         mainCarouselTextCurrent[counter].classList.add("d-none");
+        asideCarouselImageCurrent[counter].classList.remove("my-active");
 
         mainCarouselImageCurrent[mainCarouselImageCurrent.length - 1].classList.remove("d-none");
         mainCarouselImageCurrent[mainCarouselImageCurrent.length - 1].classList.add("d-block");
+        asideCarouselImageCurrent[mainCarouselImageCurrent.length - 1].classList.add("my-active");
 
         mainCarouselTextCurrent[mainCarouselImageCurrent.length - 1].classList.remove("d-none");
         mainCarouselTextCurrent[mainCarouselImageCurrent.length - 1].classList.add("d-block");
