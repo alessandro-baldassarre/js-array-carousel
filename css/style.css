@@ -33,12 +33,12 @@
 
 .my-carousel-aside-img{
     height: calc(100% / 5);
-    filter: opacity(50%)
+    filter: brightness(50%);
 }
 
 .my-active{
     border: 3px solid lightgray;
-    filter: opacity(100%);
+    filter: brightness(100%);
 }
 
 
@@ -60,6 +60,7 @@
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+    z-index: 2;
 }
 .arrow-up{
     top: .5rem;
